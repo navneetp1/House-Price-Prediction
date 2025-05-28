@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>House Price Predictor</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <h1 class="heading">House Price Predictor</h1>
+      <section class="sub-container">
+        <div class="right">
+          <h2 class="subheading">How this works?</h2>
+          <section class="content">
+            <h3>Model Used</h3>
+            <ul>
+              <li>
+                Our tool uses a Linear Regression Model, a statistical approach
+                that analyzes the relationship between key features (like
+                location, size, etc.) and property prices.
+              </li>
+            </ul>
+            <h3>Dataset Source</h3>
+            <ul>
+              <li>
+                The model is trained on a sample dataset for demonstration
+                purposes.
+              </li>
+              <li>
+                Note: The dataset does not represent actual market prices or
+                real-world listings.
+              </li>
+            </ul>
+            <h3>Purpose</h3>
+            <ul>
+              <li>
+                This is a simulation to showcase how machine learning can
+                estimate prices based on input variables.
+              </li>
+            </ul>
+            <h3>Limitations</h3>
+            <ul>
+              <li>
+                Predictions are approximations and should not be considered
+                financial or real estate advice.
+              </li>
+              <li>
+                For accurate valuations, consult a professional appraiser or
+                real-time market data.
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div class="left">
+          <h2 class="subheading">Fill this form with desired data</h2>
+          <form action="/predict" method="POST" class="form-box">
+            <div class="main-form-box">
+              <div class="first-half">
+                <label>Area (sq ft):</label
+                ><input type="number" name="area" required /><br />
+                <label>Bedrooms:</label
+                ><input type="number" name="bedrooms" min="1" required /><br />
+                <label>Bathrooms:</label
+                ><input type="number" name="bathrooms" min="1" required /><br />
+                <label>Stories:</label
+                ><input type="number" name="stories" min="1" required /><br />
+                <label>Main Road (yes/no):</label>
+                <select name="mainroad" required>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option></select
+                ><br />
+                <label>Guest Room (yes/no):</label>
+                <select name="guestroom" required>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </div>
+              <div class="second-half">
+                <label>Basement (yes/no):</label>
+                <select name="basement" required>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option></select
+                ><br />
+                <label>Hot Water Heating (yes/no):</label>
+                <select name="hotwaterheating" required>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option></select
+                ><br />
+                <label>Air Conditioning (yes/no):</label>
+                <select name="airconditioning" required>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option></select
+                ><br />
+                <label>Parking Spaces:</label
+                ><input type="number" name="parking" min="0" required /><br />
+                <label>Preferred Area (yes/no):</label>
+                <select name="prefarea" required>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option></select
+                ><br />
+                <label>Furnishing Status:</label>
+                <select name="furnishingstatus" required>
+                  <option value="furnished">Furnished</option>
+                  <option value="semi-furnished">Semi-furnished</option>
+                  <option value="unfurnished">Unfurnished</option></select
+                ><br />
+              </div>
+            </div>
+            <button type="submit" value="Predict Price">Predict price</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
