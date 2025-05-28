@@ -9,6 +9,7 @@ html {
   display: flex;
   flex-direction: column;
   text-align: center;
+  flex-wrap: wrap;
   /* border: 2px solid white; */
 }
 
@@ -32,6 +33,15 @@ html {
   /* border: 2px solid white; */
   height: 100vh;
   gap: 50px;
+}
+
+@media (max-width: 768px) {
+  .sub-container {
+    flex-direction: column;
+    gap: 300px;
+    padding: 20px;
+    height: auto;
+  }
 }
 
 .left {
