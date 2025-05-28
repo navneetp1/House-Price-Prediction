@@ -35,12 +35,29 @@ html {
   gap: 50px;
 }
 
-@media (max-width: 768px) {
+@media screen and (min-width: 700px) and (max-width: 768px) {
   .sub-container {
-    flex-direction: column;
-    gap: 300px;
+    flex-direction: column; /* stack left and right form sections */
+    align-items: center; /* center content */
+    gap: 25rem; /* smaller gap on small screens */
     padding: 20px;
-    height: auto;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 699px) {
+  .sub-container {
+    flex-direction: column; /* stack left and right form sections */
+    align-items: center; /* center content */
+    gap: 40rem; /* smaller gap on small screens */
+    padding: 20px;
+  }
+}
+@media screen and (min-width: 250px) and (max-width: 499px) {
+  .sub-container {
+    flex-direction: column; /* stack left and right form sections */
+    align-items: center; /* center content */
+    gap: 60rem; /* smaller gap on small screens */
+    padding: 20px;
   }
 }
 
